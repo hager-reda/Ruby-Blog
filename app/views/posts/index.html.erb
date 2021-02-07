@@ -1,1 +1,23 @@
-<h1 class="title"> hello</h1>
+<% content_for :page_title, "Home" %>
+<section class="section">
+   <div class="container">
+       <%= @posts.each do |p| %>
+          <div class="card">
+              <div class="card-content">
+                 <div class="media">
+                     <div class="media-content">
+                         <p class="title is-4">
+                           <%= link_to p.title, p %>
+                         </p>
+                     </div>
+                 </div>
+                 <div class="content">
+                   <%= p.content %>
+                 </div>
+                 
+              </div>
+          </div
+       <% end %>
+     
+   </div>
+</section>
