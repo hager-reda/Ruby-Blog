@@ -32,6 +32,9 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 # gem to pagination
 gem 'kaminari'
 
+#authentication gem
+gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

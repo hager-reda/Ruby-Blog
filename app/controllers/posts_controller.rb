@@ -1,15 +1,19 @@
 class PostsController < ApplicationController
 
+    before_action :authenticate_user!
+
     def index
         @posts = Post.all.order("created_at DESC").page params[:page]
     end
 
     def new
         @post = Post.new
+        # puts(current_user.email)
     end
 
     def create
         @post = Post.new(post_params)
+        @post.user_id = current_user.id
 
         if@post.save
             redirect_to @post
@@ -20,6 +24,8 @@ class PostsController < ApplicationController
 
     def show 
         @post = Post.find(params[:id])
+        puts(@post.user.email)
+
     end
 
     def update
